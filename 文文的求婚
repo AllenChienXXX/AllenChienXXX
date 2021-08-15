@@ -1,0 +1,11 @@
+import sys
+whichyear = sys.stdin.readline()
+while whichyear !="":
+    wy = int(whichyear)
+    if (wy%4>0) or ((wy%400>0) and (wy%100==0)):
+        print("平年")
+    else:
+        print("閏年")
+
+
+    whichyear = sys.stdin.readline()
