@@ -1,0 +1,24 @@
+import sys
+inum = sys.stdin.readline()
+while inum != '':
+    inum = inum.replace("\r","").replace("\n","")
+    inum = inum.split()
+    a = int(inum[0])
+    b = int(inum[1])
+    c = int(inum[2])
+
+    if b**2-4*a*c > 0:
+        x1 = (-b + (b**2-4*a*c)**0.5)/2/a
+        x2 = (-b - (b**2-4*a*c)**0.5)/2/a
+        if x1 > x2:
+            print("Two different roots x1=%d , x2=%d" % (x1,x2))
+        else:
+            print("Two different roots x1=%d , x2=%d" % (x2,x1))
+    elif b**2-4*a*c == 0:
+        x = -b/2/a
+        print("Two same roots x=%d" % (x))
+    else:
+        print("No real root")
+    inum = sys.stdin.readline()
+
+        
