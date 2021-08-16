@@ -1,0 +1,15 @@
+import sys
+iCnt = sys.stdin.readline()
+iCnt = int(iCnt)
+for i in range(iCnt):
+    inum = sys.stdin.readline()
+    inum = inum.replace("\r","").replace("\n","")
+    inum = inum.split()
+    a = int(inum[0])
+    b = int(inum[1])
+    c = int(inum[2])
+    d = int(inum[3])
+    if (b-a) == (d-c):
+        print(a,b,c,d,d+(d-c))
+    else:
+        print(a,b,c,d,int(d*(d/c)))
