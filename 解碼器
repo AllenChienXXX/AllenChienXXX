@@ -1,0 +1,6 @@
+import sys
+sln = sys.stdin.readline()
+for x in range(len(sln)):
+    newS = chr(ord(sln[x])-7)
+    print(newS,end= "")
+    
