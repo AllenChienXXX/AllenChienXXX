@@ -1,0 +1,71 @@
+import sys
+
+def findPrime(inNum): #determine whether the number is prime number
+    ans = 1
+    a = 2
+    while a < inNum:
+        if inNum % a == 0:
+            ans = 0
+            break
+        a+=1
+    return ans
+    
+iNum = sys.stdin.readline()
+iNum = iNum.replace("\n","").replace("\r","")
+iNum = int(iNum)
+list = []
+# print(findPrime(iNum))
+
+while iNum != 1: #find out which prime number is factor number
+    x = 2 #x is variable to /
+    while x <= iNum:
+        if findPrime(x)==0:
+            x += 1
+            # print("x1=",x)
+        else:
+            if iNum % x == 0:
+                list.append(x)
+                iNum = iNum/x
+                # print("x2=",x)
+                # print("iNum=",iNum)
+            elif iNum % x != 0:
+                x+=1
+
+# print("x=",x)
+# print(list)
+iCnt = 1
+flag = 0
+for i in range(len(list)):
+    # print("i=",i)
+    if i==len(list)-1:
+        if flag==1:
+            # print("1st part")
+            print(list[i],end = "")
+            print("^",end = "")
+            print(iCnt,end = "")
+        else:
+            # print("2nd part")
+            print(list[i],end = "")
+    else:
+        if(list[i+1] == list[i]):
+            iCnt+=1
+            flag = 1
+            # print("3rd part")
+        else:
+            
+            if flag==1:
+                # print(list[i])
+                # print("^")
+                # print(iCnt)
+                # print(" * ")
+                print(list[i],end = "")
+                print("^",end = "")
+                print(iCnt,end = "")
+                print(" * ",end = "")
+                flag = 0
+                iCnt = 1
+                # print("4th part")
+            else:
+                print(list[i],end = "")
+                print(" * ",end = "")
+                # print("5th part")
