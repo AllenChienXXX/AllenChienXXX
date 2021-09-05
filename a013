@@ -1,10 +1,7 @@
-iNum = str(input())   #I write it by myself
-iNum = iNum.replace("\r","").replace("\n","")
-iNum = iNum.split()
-a = iNum[0]
-b = iNum[1]
+import sys
+# coding=utf-8
 dic = {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
-def finc(c):      #羅馬數字帶入此函數德出數子
+def finc(c):      
       if c == "I":
             I = dic["I"]
             return I
@@ -26,84 +23,96 @@ def finc(c):      #羅馬數字帶入此函數德出數子
       else:
             M = dic["M"]
             return M
-total = finc(a[0])
-for x in range(len(a)-1):   #計算輸入的數子1 if len(a)=4
-      c11 = finc(a[x])
-      c21 = finc(a[x+1])
-      if c11 >= c21:
-            # isum = c11 + c21
-            ipum = 0
-            total = total+c21
-            # print("isum:",isum)
-      else:
-            isum = 0
-            ipum = c21 - c11
-            total = total+ipum
-
-# a2 = isum+ipum
-# print("total1:",total)
-total2 = finc(b[0])
-for y in range(len(b)-1):   #計算輸入的數子2
-      c3 = finc(b[y])
-      c4 = finc(b[y+1])
-      if c3 >= c4:
-            ipum2 = 0
-            total2 = total2+c4
-      else:
-            isum2 = 0
-            ipum2 = c4-c3
-            total2 = total2+ipum2
-# print("total2:",total2)
-value = abs(total-total2)
-print("total:",total)
-print("total2:",total2)
-print("value:",value)
-if value ==0:
-      print("zero")
-else:
-      print('M'*int(value//1000),end="")
-      value = value%1000
-      if(value//100<5):
-            if(value//100 == 4):
-                print("CD",end = "")
-                value = value%100
+iNum = sys.stdin.readline()
+while iNum!="":
+      iNum = iNum.replace("\r","").replace("\n","")
+      if (iNum=="#"):
+            break
+      iNum = iNum.split()
+      a = iNum[0]
+      b = iNum[1]      
+      total1 = 0
+      total = finc(a[0])
+      for x in range(len(a)-1):   #1 if len(a)=4
+            c11 = finc(a[x])
+            c21 = finc(a[x+1])
+            if c11 >= c21:
+                  # isum = c11 + c21
+                  ipum = 0
+                  total = total+c21
+                  # print("isum:",isum)
             else:
-                print("C" * int(value//100),end="")
-                value = value%100
+                  isum = 0
+                  ipum = c21 - c11
+                  total1 = total1+ipum
+      v1=total1+total
+      # a2 = isum+ipum
+      # print("total1:",total)
+      total2 = finc(b[0])
+      total3 = 0
+      for y in range(len(b)-1):   #2
+            c3 = finc(b[y])
+            c4 = finc(b[y+1])
+            if c3 >= c4:
+                  ipum2 = 0
+                  total2 = total2+c4
+            else:
+                  isum2 = 0
+                  ipum2 = c4-c3
+                  total3 = total3+ipum2
+      v2 = total2+total3
+      # print("total2:",total2)
+      value = abs(v1-v2)
+      # print("total:",total)
+      # print("total2:",total2)
+      # print("value:",value)
+      if value ==0:
+            print("zero")
       else:
-            if(value//100==9):
-                print("CM",end = "")
-                value = value%100
+            print('M'*int(value//1000),end="")
+            value = value%1000
+            if(value//100<5):
+                  if(value//100 == 4):
+                        print("CD",end = "")
+                        value = value%100
+                  else:
+                        print("C" * int(value//100),end="")
+                  value = value%100
             else:
-                print("L",end = "")
-                print("X" * int(value//100-5),end = "")
-                value = value%100
-      
-      if(value//10<5):
-            if(value/10 == 4):
-                print("XL",end = "")
-                value = value%10
-            else:
-                print("X" * int(value//10),end="")
-                value = value%10
-      else:
-            if(value//10==9):
-                print("XC",end = "")
-                value = value%10
-            else:
-                print("L",end = "")
-                print("X" * int(value//10-5),end = "")
-                value = value%10
+                  if(value//100==9):
+                        print("CM",end = "")
+                        value = value%100
+                  else:
+                        print("L",end = "")
+                        print("X" * int(value//100-5),end = "")
+                        value = value%100
             
-      if(value//1<5):
-            if(value//1 == 4):
-                print("IV",end = "")
+            if(value//10<5):
+                  if(value/10 == 4):
+                        print("XL",end = "")
+                        value = value%10
+                  else:
+                        print("X" * int(value//10),end="")
+                        value = value%10
             else:
-                print("I" * int(value//1),end="")
-      else:
-            if(value//1==9):
-                print("IX",end = "")
+                  if(value//10==9):
+                        print("XC",end = "")
+                        value = value%10
+                  else:
+                        print("L",end = "")
+                        print("X" * int(value//10-5),end = "")
+                        value = value%10
+                  
+            if(value//1<5):
+                  if(value//1 == 4):
+                        print("IV",end = "")
+                  else:
+                        print("I" * int(value//1),end="")
             else:
-                print("V",end = "")
-                print("I" * int(value//1-5),end="")
-      print("")
+                  if(value//1==9):
+                        print("IX",end = "")
+                  else:
+                        print("V",end = "")
+                        print("I" * int(value//1-5),end="")
+            print("")
+      iNum = sys.stdin.readline()
