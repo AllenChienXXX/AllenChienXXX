@@ -1,0 +1,21 @@
+import sys
+inum = sys.stdin.readline()
+while inum!="":
+    inum = inum.replace("\r","").replace("\n","")
+    inum = inum.split()
+    row = int(inum[0])
+    column = int(inum[1])
+    row < 100,column < 100
+    list = []
+    for ipm in range((row)): #every number on particular column
+        ipm = sys.stdin.readline()
+        ipm = ipm.replace("\r","").replace("\n","")
+        ipm = ipm.split()
+        list.append(ipm)
+#     print(list)
+    for x in range(column):
+        for y in range(row):
+            val = list[y][x]
+            print(val,end=' ')
+        print()
+    inum = sys.stdin.readline()
