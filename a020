@@ -1,0 +1,25 @@
+iid = input()
+y = 8
+d = iid[0]
+dic = {"A":10,"B":11,"C":12,"D":13,"E":14,"F":15
+,"G":16,"H":17,"I":34,"J":18,"K":19,"L":20,"M":21,"N":22
+,"O":35,"P":23,"Q":24,"R":25,"S":26,"T":27,"U":28,
+"V":29,"W":32,"X":30,"Y":31,"Z":33}
+# print(d)
+dp = int(dic[d])
+dpp = dp % 10
+# print(dpp)
+dpp9 = int(iid[9])
+dppp = dp // 10
+val = dpp*9 + dppp + dpp9
+for x in range(1,9):
+    dpppp = int(iid[x])*y
+    val += dpppp
+    y = y - 1
+    # print(y)
+
+# print(val)
+if val % 10 ==0:
+    print("real")
+else:
+    print("fake")
