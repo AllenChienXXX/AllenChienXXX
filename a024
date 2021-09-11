@@ -1,0 +1,37 @@
+import sys
+data = sys.stdin.readline()
+data = data.replace("\n","").replace("\r","")
+data = data.split()
+y = 1
+x = 1
+alist = []
+blist = []
+while data != 0:
+    a = int(data[0])
+    if  a % y == 0:
+        if y == a:
+            alist.append(y)
+            break
+        else:
+            alist.append(y)
+            y+=1
+    else:
+        y+=1
+while data != 0:
+    b = int(data[1])
+    if  b % x == 0:
+        if x == b:
+            blist.append(x)
+            break
+        else:
+            blist.append(x)
+            x+=1
+    else:
+        x+=1
+
+# print(alist,blist)
+clist = []
+for z in range(len(alist)):
+    if alist[z] in blist:
+        clist.append(int(alist[z]))
+print(clist[len(clist)-1])
