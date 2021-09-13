@@ -1,0 +1,11 @@
+import sys
+inum = sys.stdin.readline()
+inum = inum.replace("\r","").replace("\n","")
+while int(inum)%10==0:
+    inum=int(inum)/10
+    if int(inum)==0:
+        inum = 0
+        break
+inum = str(int(inum))
+inum = inum[::-1]
+print(inum)
