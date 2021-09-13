@@ -1,0 +1,16 @@
+import sys
+inum = sys.stdin.readline()
+alist = []
+inum = int(inum)
+while inum!="":
+    if inum % 2 == 1:
+        alist.append(1)
+        inum = inum//2
+    else:
+        alist.append(0)
+        inum = inum//2
+alist.reverse()
+for x in range(len(alist)):
+    print(alist[x],end="")
+
+inum = sys.stdin.readline()
