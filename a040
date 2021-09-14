@@ -1,0 +1,20 @@
+import sys
+inum = sys.stdin.readline()
+inum = inum.replace("\r","").replace("\n","")
+inum = inum.split()
+min = int(inum[0])
+max = int(inum[1])
+value = []
+for x in range(min, max+1):
+    x = str(x)
+    sum = 0
+    for i in range(len(x)):
+        n = len(x)
+        sum = sum + int(x[i])**n
+        # print(sum,x)
+    # print(sum)
+    if sum == int(x):
+        print(sum,end=" ")
+        value.append(sum)
+if value == []:
+    print("none")
