@@ -1,0 +1,16 @@
+import sys
+cir = sys.stdin.readline()
+cir = cir.replace("\n","").replace("\r","")
+cir = int(cir)
+n = 1
+slist = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576,
+             625, 676, 729, 784, 841, 900, 961]
+for i in range(cir):
+    a = int(sys.stdin.readline())
+    b = int(sys.stdin.readline())
+    val = 0
+    for x in range(a,b+1):
+        if x in slist:
+            val +=x
+    print("Case %d: %d" % (i+1,val))
+        
