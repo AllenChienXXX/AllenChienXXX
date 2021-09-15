@@ -1,0 +1,12 @@
+import sys
+alp = sys.stdin.readline()
+while alp!="":
+    alp = alp.replace("\n","").replace("\r","")
+    alp = alp.split()
+    N = int(alp[0])
+    M = int(alp[1])
+    if N>M:
+        print(M+1)
+    elif N==M:
+        print(M)
+    alp = sys.stdin.readline()
