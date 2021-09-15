@@ -1,0 +1,15 @@
+import sys
+iNum=sys.stdin.readline()
+while iNum!='':
+    iNum=iNum.replace('\r','').replace('\n','')
+    iNum=iNum.split()
+    M = int(iNum[0])
+    D = int(iNum[1])
+    S = (M*2+D)%3
+    if S == 0:
+        print('普通')
+    elif S == 2:
+        print('大吉')
+    else:
+        print('吉')
+    iNum=sys.stdin.readline()
