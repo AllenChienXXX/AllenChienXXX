@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>MOVIESTO</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="topbar">
+        <nav>
+            <ul class="topnav">
+                <li><a class="lin" href="index">HOME</a></li>
+                <li><a class="lin" href="index#about">ABOUT</a></li>
+                <li><a class="lin" href="team">TEAM</a></li>
+                <li><a class="lin" href="index#service">SERVICE</a></li>
+                <li><a class="lin" href="register">SIGN UP NOW!</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div>
+        <form action="login" method="POST" class="login">
+        {% csrf_token %}
+        <label>Username:</label>
+        <input type="text" name="username" class="logintext" placeholder="Your username..."/>
+        <label>Password:</label>
+        <input type="password" name="password" class="logintext" placeholder="Your password..."/>
+        <input type="submit" value="submit" class="loginbutton"/>
+        </form>
+        {% for message in messages %}
+        <div class="loginerror">{{message}}</div>
+        {% endfor %}
+    </div>
+</body>

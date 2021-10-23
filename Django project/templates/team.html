@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>MOVIESTO</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta charset="UTF-8">
+    </head>    
+    <body>
+        <div class="topbar">
+            <nav>
+                <ul class="topnav">
+                    <li><a class="lin" href="index">HOME</a></li>
+                    <li><a class="lin" href="index#about">ABOUT</a></li>
+                    <li><a class="lin" href="team">TEAM</a></li>
+                    <li><a class="lin" href="index#service">SERVICE</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="lin" href="logout">LOG OUT</a></li>
+                    {% else %}
+                    <li><a class="lin" href="login">LOG IN</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <section class="nexttop">
+            <div>
+                <ul>
+                    <li>Leader : Allen chien</li>
+                    <li>Teammate : Only Allen</li>
+                    <li>Phone number : 0978363105</li>
+                    <li>Email : allen71090@gmail.com</li>
+                    <li><a href="#">Location</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="nextcontact-sec">
+            <!-- <div class="contact-div"> -->
+                <h3>Contact me!</h3>
+                <!-- <form action=""> -->
+                    <!-- <label for="name">name</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"> -->
+
+                    <!-- <label for="message">message</label>
+                    <textarea id="name" name="message" cols="30" rows="1"></textarea>
+                    <input type="submit" class="send-message-cta" value="Send message"> -->
+                <!-- </form> -->
+            <!-- </div> -->
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.957810174635!2d120.32510101479365!3d22.655361585140266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e05273b7c412f%3A0x66d2466b925eeb4b!2zODA36auY6ZuE5biC5LiJ5rCR5Y2A5aSn6KOV6LevNTHlt7cyM-iZnw!5e0!3m2!1szh-TW!2stw!4v1634363294322!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </body>
+</html>

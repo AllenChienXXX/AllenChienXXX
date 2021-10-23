@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>MOVIESTO</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="topbar">
+            <nav>
+                <ul class="topnav">
+                    <li><a class="lin" href="index">HOME</a></li>
+                    <li><a class="lin" href="index#about">ABOUT</a></li>
+                    <li><a class="lin" href="team">TEAM</a></li>
+                    <li><a class="lin" href="index#service">SERVICE</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="lin" href="logout">LOG OUT</a></li>
+                    {% else %}
+                    <li><a class="lin" href="login">LOG IN</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <section class="picture">
+            <img src={% static "screen.png" %} alt="screen" style="width:100%"> 
+        </section>
+        <div class="nexttop10">Top 10 {{movietypes}} movie</div>
+        <ol class="nextmovietypes">
+        {% for item in movie %}
+            <li>{{item}}</li>
+        {% endfor %}
+        </ol>
+        {% if user.is_authenticated %}
+        <div class="nextrec">Personal reccomendation : <span class="nextspan">{{personalrec}}</span></div>
+        {% endif %}
+    </body>
+</html>
+

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>MOVIESTO</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="topbar">
+        <nav>
+            <ul class="topnav">
+                <li><a class="lin" href="index">HOME</a></li>
+                <li><a class="lin" href="index#about">ABOUT</a></li>
+                <li><a class="lin" href="team">TEAM</a></li>
+                <li><a class="lin" href="index#service">SERVICE</a></li>
+                {% if user.is_authenticated %}
+                    <li><a class="lin" href="logout">LOG OUT</a></li>
+                    {% else %}
+                    <li><a class="lin" href="login">LOG IN</a></li>
+                    {% endif %}
+            </ul>
+        </nav>
+    </div>
+    <section class="getstart">
+        <img src={% static "screen.png" %} alt="screen" style="width:100%"> 
+        <div class="startcontent">Welcome!May you find what you're looking for!</div>
+        <div class="startque">What kind of movie do you prefer?</div>
+        <nav class="startlist">
+            <ul class="startlistdisplay">
+                <form method="POST" action="next">
+                    {% csrf_token %}
+                    <li class="startlistelement"><input type="radio" name="movie" value="Action&Adventure">Action&Adventure</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Animation">Animation</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Art house&International">Art house&International</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Comedy">Comedy</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Classics">Classics</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Drama">Drama</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Documentory">Documentory</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Kids&family">Kids&family</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Horror">Horror</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Mystery&Suspense">Mystery&Suspense</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Music&Performing arts">Music&Performing arts</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Science fiction&Fantasy">Science fiction&Fantasy</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Romance">Romance</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Special interest">Special interest</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Sport&Fitness">Sport&Fitness</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Television">Television</li>
+                    <li class="startlistelement"><input type="radio" name="movie" value="Western">Western</li>
+                    <input class="startnext" type="submit" value="Next" name="checkbox"/>
+                </form>
+            </ul>
+        </nav>
+    </section>
+</body>
+
