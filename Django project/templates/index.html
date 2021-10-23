@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>MOVIESTO</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta charset="UTF-8">
+    </head>
+    <body id="top">
+        <div class="topbar">
+            <nav>
+                <ul class="topnav">
+                    <li><a class="lin" href="index">HOME</a></li>
+                    <li><a class="lin" href="#about">ABOUT</a></li>
+                    <li><a class="lin" href="team">TEAM</a></li>
+                    <li><a class="lin" href="#service">SERVICE</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="lin" href="logout">LOG OUT</a></li>
+                    {% else %}
+                    <li><a class="lin" href="login">LOG IN</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <a href="#top" class="topbutton">Top</a>
+        <section class="picture">
+            <img src={% static "screen.png" %} alt="screen" style="width:100%"> 
+            <div>      
+                <h1 class="logo">MOVIESTO</h1>
+                <div class="subtitle">Help you find your next movie</div>
+                <a href="newpage" class="search-cta">GET STARTED!</a>
+            </div>
+        </section>
+        {% if user.is_authenticated %}
+        <div class="topbaruser">Welcome, {{user.username}}</div>
+        {% else %}
+        <div class="topbaruser">Welcome, Stranger</div>
+        {% endif %}
+        <section>
+            <div id="about" class="about">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <label><h2>About me :</h2><label>
+                <h3>I'm a self-learn developer and currently learning to develope a Django project,so this is my first Django project and I hope you like it!</h3>
+                <h3>If you wish to contact me just click the 'Team' button on the top!</h3>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </section>
+        <section>
+            <div id="service" class="service">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <label><h2>Service :</h2></label>
+                <h3>The service we provide is assisting you to help you find a movie you may want to watch next.</h3>
+                <h3>The rankings of the movies are from rotten tomatoes top 100,hope you like it.</h3>
+                <h3>If you sign up and join us,you can see my personal recommendations of the movies!</h3>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </section>
+    </body>    
+</html>
