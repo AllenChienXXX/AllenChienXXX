@@ -1,6 +1,6 @@
 <h1>Welcome to my project!Let me show you around.<h1>
 <h3>This is my home page<h3>
-  ![GitHub Logo](Django project/images/2021-10-23.png)
+  (Django project/images/2021-10-23.png)
   Format: ![Alt Text](url)
 <h3>When you hit 'Get startes'<h3>
   ![GitHub Logo](Django project/images/2021-10-23 (1).png)
