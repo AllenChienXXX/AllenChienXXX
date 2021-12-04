@@ -5,8 +5,8 @@ This project is about CNN, which is convolution neural network.
 To understand it, you need to know how machine learning works, I didn't use any machine learning module(Tensorflow,keras,etc...)
 But I read a lot of books about deep learning,so I'll be able to start it at the bottom.
 I'll not explain the algorithms & details about how layers work here.
-## [code]
-:point_right:(https://github.com/AllenChienXXX/Projects-Practices/blob/projects/English%20letter%20recognition/Code.py)
+## Code
+:point_right:[Here](https://github.com/AllenChienXXX/Projects-Practices/blob/projects/English%20letter%20recognition/Code.py)
 ## datasets
 :point_right:[Training](https://drive.google.com/drive/folders/1xpOHmM0b1437qn1lOcvwam7ko_tSBPUP?usp=sharing)
 
