@@ -22,6 +22,10 @@ I'll not explain the algorithms & details about how layers work here.
 ## How to use the code 
 - Download the dataset
 - Inside the code you will see how I upload data and shaping it
+## Problems I encounter
+After I use the original data to train & test,the train error is nearly 100%,but the test error is very low,it seems to be a overfitting problem,so I try to change the amount of layers and put in some dropout layer,but that didn't change the result,but then I put both train and test dataset together and split it again evenly,and that did work!I think the main reason is because I use Adagrad and the weights and bias are able to recognize "Z" at the end,so it might not be able to recognize "A" again,the another way to solve this using "Adam" as optimizer:eyes:,but I can't write it in code,maybe I will try next time!
+
+
 ## Contact me
 - :point_right:allen71090@gmail.com:eyes: 
 
