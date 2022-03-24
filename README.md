@@ -1,5 +1,5 @@
 ## Welcome to my Github page ! If you are looking for projects that I've done, click *main* and scrow down to *projects*, there you'll find them, enjoy!:stuck_out_tongue_winking_eye:
-## Or you can simply click [HERE](https://github.com/AllenChienXXX/Projects-Practices/tree/projects)
+## Or you can simply click [HERE](https://github.com/AllenChienXXX/Projects-Practices/tree/projects) :eye:
 
 - 👋 Hi, I’m @AllenChienXXX
 - 👀 I’m interested in machine learning, c++ programming, data structures
